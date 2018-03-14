@@ -1,0 +1,7 @@
+{
+  "name": "molecule-learning",
+  "short_name": "molecule-learning",
+  "description": "This is a single page app for develop skills and improve the knowlege",
+  "start_url": "/",
+  "display": "standalone"
+}

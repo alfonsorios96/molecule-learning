@@ -1,0 +1,60 @@
+<dom-module id="molecule-learning-app-styles">
+    <template>
+        <style>
+            :host {
+                --app-primary-color: #f494ea;
+                --app-secondary-color: black;
+                display: block;
+            }
+
+            app-drawer .menu {
+                color: #0a3142;
+                background-color: var(--app-menu-color, #edcff4);
+            }
+
+            paper-card {
+                --paper-card: {
+                    -webkit-box-shadow: 0px -3px 35px 4px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px -3px 35px 4px rgba(0,0,0,0.75);
+                    box-shadow: 0px -3px 35px 4px rgba(0,0,0,0.75);
+                }
+            }
+
+            .views app-drawer-layout:not([narrow]) [drawer-toggle] {
+                display: none;
+            }
+
+            .views app-header {
+                color: #fff;
+                background-color: var(--app-primary-color);
+            }
+
+            .views app-header paper-icon-button {
+                --paper-icon-button-ink-color: white;
+            }
+
+            .views h1 {
+                margin: 16px 0;
+                color: #212121;
+                font-size: 22px;
+            }
+
+            .drawer-list {
+                margin: 0 20px;
+            }
+
+            .drawer-list a {
+                display: block;
+                padding: 0 16px;
+                text-decoration: none;
+                color: var(--app-secondary-color);
+                line-height: 40px;
+            }
+
+            .drawer-list a.iron-selected {
+                color: black;
+                font-weight: bold;
+            }
+        </style>
+    </template>
+</dom-module>
