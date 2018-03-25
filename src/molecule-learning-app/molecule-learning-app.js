@@ -15,6 +15,10 @@
                 concepts: {
                     type: Array,
                     value: []
+                },
+                currentQuiz: {
+                    type: Object,
+                    value: {}
                 }
             };
         }
@@ -40,13 +44,22 @@
                 },
                 {
                     name: 'Aptitud',
-                    defintion: 'Es una capacidad fundamentalmente innata que nos permite realizar de forma exitosa determinado tipo de tareas y actividades.'
+                    definition: 'Es una capacidad fundamentalmente innata que nos permite realizar de forma exitosa determinado tipo de tareas y actividades.'
                 },
                 {
                     name: 'Actitud',
                     definition: 'Es una predisposición personal hacia un determinado tipo de comportamientos, situaciones o tipos de estímulos.'
                 }
             ]);
+            this._getRandomQuiz();
+        }
+
+        _getRandomQuiz() {
+            this.set('currentQuiz', this.concepts[this.__getRandomInteger(0, this.concepts.length - 1)]);
+        }
+
+        __getRandomInteger(initial, ending) {
+            return Math.round(Math.random() * ending) - initial;
         }
     }
 

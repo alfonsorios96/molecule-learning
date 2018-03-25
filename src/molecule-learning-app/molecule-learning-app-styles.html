@@ -3,13 +3,13 @@
         <style>
             :host {
                 --app-primary-color: #f494ea;
-                --app-secondary-color: black;
+                --app-secondary-color: white;
                 display: block;
             }
 
             app-drawer .menu {
-                color: #0a3142;
-                background-color: var(--app-menu-color, #edcff4);
+                background-color: #f494ea;
+                color: white;
             }
 
             paper-card {
@@ -17,7 +17,21 @@
                     -webkit-box-shadow: 0px -3px 35px 4px rgba(0,0,0,0.75);
                     -moz-box-shadow: 0px -3px 35px 4px rgba(0,0,0,0.75);
                     box-shadow: 0px -3px 35px 4px rgba(0,0,0,0.75);
+                    border: 1px solid #f494ea;
+                    border-radius: 5%;
+                    width: 90%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    margin-top: 5%;
+                    padding-bottom: 10px;
                 }
+            }
+
+            paper-button.btn-primary-color {
+                background-color: #f494ea;
+                color: white;
+                border: 1px solid #ce5bf4;
+                width: 100%;
             }
 
             .views app-drawer-layout:not([narrow]) [drawer-toggle] {
@@ -49,6 +63,7 @@
                 text-decoration: none;
                 color: var(--app-secondary-color);
                 line-height: 40px;
+                font-size: 1.2rem;
             }
 
             .drawer-list a.iron-selected {

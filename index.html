@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
@@ -24,12 +24,16 @@
             storageBucket: "molecule-learning.appspot.com",
             messagingSenderId: "816812956447"
         };
-        firebase.initializeApp(config);
+
+        document.addEventListener('online', (event) => {
+            'use strict';
+            firebase.initializeApp(config);
+        });
     </script>
 
     <link rel="import" href="/src/molecule-learning-app/molecule-learning-app.html">
-  </head>
-  <body>
-    <molecule-learning-app></molecule-learning-app>
-  </body>
+</head>
+<body>
+<molecule-learning-app></molecule-learning-app>
+</body>
 </html>

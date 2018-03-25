@@ -50,7 +50,8 @@
                     <app-toolbar>
                         <paper-icon-button icon="polywallet-icons:menu" drawer-toggle></paper-icon-button>
                         <div main-title>
-                            <iron-icon icon="molecule-learning-icons:psychology"></iron-icon> Molecule Learning
+                            <iron-icon icon="molecule-learning-icons:psychology"></iron-icon>
+                            Molecule Learning
                         </div>
                     </app-toolbar>
                 </app-header>
@@ -63,18 +64,18 @@
                     <div name="home">
                         <paper-card heading="Recuerda que..." animated-shadow="true">
                             <div class="card-content">
-                                <h2>Concepto</h2>
+                                <h2>[[currentQuiz.name]]</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    [[currentQuiz.definition]]
                                 </p>
                             </div>
                             <div class="card-actions">
-                                <paper-button>Siguiente</paper-button>
+                                <paper-button class="btn-primary-color" on-tap="_getRandomQuiz">Siguiente</paper-button>
                             </div>
                         </paper-card>
                     </div>
                     <div name="quiz-form">
-
+                        <h2>Hello !</h2>
                     </div>
                 </iron-pages>
             </app-header-layout>
