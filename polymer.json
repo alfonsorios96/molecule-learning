@@ -4,7 +4,6 @@
   "fragments": [
   ],
   "sources": [
-    "src/**/*",
     "bower.json"
   ],
   "extraDependencies": [

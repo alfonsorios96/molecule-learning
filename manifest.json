@@ -1,7 +1,29 @@
 {
   "name": "molecule-learning",
-  "short_name": "molecule-learning",
+  "short_name": "Molecule Learning",
   "description": "This is a single page app for develop skills and improve the knowlege",
   "start_url": "/",
-  "display": "standalone"
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icons/icon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
 }

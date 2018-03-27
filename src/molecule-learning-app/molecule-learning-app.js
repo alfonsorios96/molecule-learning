@@ -56,6 +56,7 @@
 
         _getRandomQuiz() {
             this.set('currentQuiz', this.concepts[this.__getRandomInteger(0, this.concepts.length - 1)]);
+            pushNotification(this.currentQuiz.name, this.currentQuiz.definition);
         }
 
         __getRandomInteger(initial, ending) {
