@@ -38,58 +38,57 @@
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
     <link rel="import" href="/src/molecule-learning-app/molecule-learning-app.html" async>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js');
-        }
-
-        let pushNotification = (title, message) => {
-            let options = {
-                body: message,
-                icon: 'icons/icon-144x144.png',
-                vibrate: [100, 50, 100],
-                data: {
-                    dateOfArrival: Date.now(),
-                    primaryKey: 1
-                }
-            };
-
-            if (Notification.permission === 'granted') {
-                navigator.serviceWorker.getRegistration().then(reg => {
-                    if(reg) {
-                        reg.showNotification(title, options);
-                    }
-                });
-            }
-
-        };
-
-        document.addEventListener('online', () => {
-            'use strict';
-            // Initialize Firebase
-            let config = {
-                apiKey: "AIzaSyConVN1dUeAKi9ajNaoLqbDmiwuuj0bLFY",
-                authDomain: "molecule-learning.firebaseapp.com",
-                databaseURL: "https://molecule-learning.firebaseio.com",
-                projectId: "molecule-learning",
-                storageBucket: "molecule-learning.appspot.com",
-                messagingSenderId: "816812956447"
-            };
-
-            firebase.initializeApp(config);
-        });
-
-        document.addEventListener('offline', () => {
-            'use strict';
-            pushNotification('No tienes internet', 'Por el momento no podemos guardar nuevas preguntas');
-        });
-
-        Notification.requestPermission((status) => {
-            console.log('Notification permission status:', status);
-        });
-    </script>
 </head>
 <body>
 <molecule-learning-app></molecule-learning-app>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator
+            .serviceWorker
+            .register('service-worker.js')
+            .then(success => {
+                console.log(success);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    let pushNotification = (title, message) => {
+        let options = {
+            body: message,
+            icon: 'icons/icon-144x144.png',
+            vibrate: [100, 50, 100],
+            data: {
+                dateOfArrival: Date.now(),
+                primaryKey: 1
+            }
+        };
+
+        if (Notification.permission === 'granted') {
+            navigator.serviceWorker.getRegistration().then(reg => {
+                if (reg) {
+                    reg.showNotification(title, options);
+                }
+            });
+        }
+
+    };
+
+    const FIREBASE_CONFIG = {
+        apiKey: "AIzaSyConVN1dUeAKi9ajNaoLqbDmiwuuj0bLFY",
+        authDomain: "molecule-learning.firebaseapp.com",
+        databaseURL: "https://molecule-learning.firebaseio.com",
+        projectId: "molecule-learning",
+        storageBucket: "molecule-learning.appspot.com",
+        messagingSenderId: "816812956447"
+    };
+
+    firebase.initializeApp(FIREBASE_CONFIG);
+
+    Notification.requestPermission((status) => {
+        console.log('Notification permission status:', status);
+    });
+</script>
 </body>
 </html>

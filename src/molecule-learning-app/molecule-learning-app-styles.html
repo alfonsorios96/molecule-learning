@@ -27,11 +27,24 @@
                 }
             }
 
+            .form {
+                margin-left: 5%;
+                margin-right: 5%;
+                margin-top: 5%;
+                border: 2px solid #f494ea;
+                border-radius: 5%;
+                padding: 10px;
+            }
+
             paper-button.btn-primary-color {
                 background-color: #f494ea;
                 color: white;
                 border: 1px solid #ce5bf4;
                 width: 100%;
+            }
+
+            paper-input {
+                --primary-color: #ce5bf4;
             }
 
             .views app-drawer-layout:not([narrow]) [drawer-toggle] {
@@ -64,6 +77,14 @@
                 color: black;
                 line-height: 40px;
                 font-size: 1.1rem;
+            }
+
+            .disabled-label {
+                padding: 0 16px;
+                color: grey;
+                line-height: 40px;
+                font-size: 1.1rem;
+                font-style: italic;
             }
 
             .drawer-list a.iron-selected {
