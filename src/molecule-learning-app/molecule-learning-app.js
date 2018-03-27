@@ -12,6 +12,10 @@
 
         static get properties() {
             return {
+                onLine: {
+                    type: Boolean,
+                    value: false
+                },
                 concepts: {
                     type: Array,
                     value: []
@@ -52,6 +56,16 @@
                 }
             ]);
             this._getRandomQuiz();
+        }
+
+        saveConcept() {
+            let concept = this.$.concept.value;
+            let definition = this.$.definition.value;
+            this.push('concepts', {
+                name: concept,
+                definition: definition
+            });
+            pushNotification('Nueva palabra', `Excelente, ahora tienes ${this.concepts.lenght} conceptos de psicología.`);
         }
 
         _getRandomQuiz() {

@@ -15,6 +15,9 @@
 <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/network-information/network-information.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 
 <link rel="import" href="./molecule-learning-app-styles.html">
 <link rel="import" href="./molecule-learning-app-icons.html">
@@ -29,6 +32,9 @@
                 data="{{routeData}}"
                 tail="{{subroute}}">
         </app-route>
+        <network-information
+                on-line="{{onLine}}"
+        </network-information>
 
         <app-drawer-layout fullbleed narrow="{{narrow}}">
             <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
@@ -38,7 +44,12 @@
                         <iron-selector selected="{{routeData.page}}" attr-for-selected="name" class="drawer-list"
                                        role="navigation">
                             <a name="home" href="home">Inicio</a>
-                            <a name="quizForm" href="quiz-form">Crear nuevas preguntas</a>
+                            <div hidden$="[[!onLine]]">
+                                <a name="quizForm" href="quiz-form">Crear nuevas preguntas</a>
+                            </div>
+                            <div hidden$="[[onLine]]">
+                                <p class="disabled-label">No puedes agregar conceptos sin internet</p>
+                            </div>
                         </iron-selector>
                     </app-header>
                 </app-header-layout>
@@ -75,7 +86,15 @@
                         </paper-card>
                     </div>
                     <div name="quiz-form">
-                        <h2>Hello !</h2>
+                        <div hidden$="[[!onLine]]" class="form">
+                            <h3>Incrementa tu conocimiento</h3>
+                            <paper-input label="Concepto nuevo" id="concept"></paper-input>
+                            <paper-input label="Definición" id="definition"></paper-input>
+                            <paper-button class="btn-primary-color" on-tap="saveConcept">Guardar</paper-button>
+                        </div>
+                        <div hidden$="[[onLine]]">
+                            <p class="disabled-label">No puedes agregar conceptos sin internet</p>
+                        </div>
                     </div>
                 </iron-pages>
             </app-header-layout>
