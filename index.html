@@ -86,6 +86,8 @@
 
     firebase.initializeApp(FIREBASE_CONFIG);
 
+    var database = firebase.database();
+
     Notification.requestPermission((status) => {
         console.log('Notification permission status:', status);
     });

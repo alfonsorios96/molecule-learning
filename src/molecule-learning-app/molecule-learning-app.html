@@ -75,7 +75,7 @@
                             <div class="card-content">
                                 <h2>[[currentQuiz.name]]</h2>
                                 <p>
-                                    [[currentQuiz.definition]]
+                                    [[currentQuiz.description]]
                                 </p>
                             </div>
                             <div class="card-actions">
@@ -87,7 +87,7 @@
                         <div hidden$="[[!onLine]]" class="form">
                             <h3>Incrementa tu conocimiento</h3>
                             <paper-input label="Concepto nuevo" id="concept"></paper-input>
-                            <paper-input label="Definición" id="definition"></paper-input>
+                            <paper-input label="Definición" id="description"></paper-input>
                             <paper-button class="btn-primary-color" on-tap="saveConcept">Guardar</paper-button>
                         </div>
                         <div hidden$="[[onLine]]">
